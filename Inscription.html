@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Votre CSS personnalisé (si nécessaire) -->
+    <!-- <link rel="stylesheet" href="../Projet/Style.css"> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Inscription</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/inscription" method="POST" class="needs-validation" novalidate>
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username (obligatoire):</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre nom d'utilisateur.
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email (obligatoire):</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse email valide.
+                        </div>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password (obligatoire):</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer un mot de passe.
+                        </div>
+                    </div>
+                    
+                    <!-- Genre -->
+                    <fieldset class="mb-3">
+                        <legend class="col-form-label pt-0">Genre:</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="male" name="gender" value="male" required>
+                            <label class="form-check-label" for="male">
+                                Homme
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="female" name="gender" value="female" required>
+                            <label class="form-check-label" for="female">
+                                Femme
+                            </label>
+                        </div>
+                        <div class="invalid-feedback d-block">
+                            Veuillez sélectionner votre genre.
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Pays -->
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Pays:</label>
+                        <select class="form-select" id="country" name="country" required>
+                            <option value="" disabled selected>Choisissez votre pays</option>
+                            <option value="france">France</option>
+                            <option value="belgium">Belgique</option>
+                            <option value="switzerland">Suisse</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Veuillez sélectionner votre pays.
+                        </div>
+                    </div>
+                    
+                    <!-- Conditions Générales -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                        <label class="form-check-label" for="terms">J'accepte les conditions générales d'utilisation</label>
+                        <div class="invalid-feedback">
+                            Vous devez accepter les conditions générales.
+                        </div>
+                    </div>
+                    
+                    <!-- Bouton de Soumission -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap 5 JS Bundle avec Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Validation de formulaire Bootstrap (optionnel) -->
+    <script>
+        // Exemple de validation de formulaire Bootstrap 5
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
